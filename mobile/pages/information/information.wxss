@@ -1,0 +1,27 @@
+/* pages/construction/information/information.wxss */
+page{
+  background-color: #eeeeee;
+}
+.title{
+  font-size: 46rpx;
+}
+.brunch{
+  color: blue;
+  font-size: 36rpx;
+  margin: 20rpx 0;
+}
+.brunch .time{
+  color: #8a8a8a;
+  margin: 20rpx;
+  font-size: 34rpx;
+}
+.frame{
+  background-color: white;
+  padding: 20rpx;
+  border-top: solid 3rpx #eeeeee;
+}
+.content{
+  font-family: 微软雅黑;
+  border-top: solid 3rpx #eeeeee;
+  padding: 20rpx 0;
+}

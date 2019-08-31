@@ -1,0 +1,92 @@
+<!--index.wxml-->
+<!-- 昨日概况标题 -->
+<view class='head'>
+  <view class='title'>
+    <view>昨日概况</view>
+    <image style='height:40rpx;width:40rpx;' src='/images/about.png'></image>
+  </view>
+  <view class='noemphis'>数据更新至2019-04-22</view>
+</view>
+<!-- 昨日概况标题结束 -->
+
+<!-- 概况数据 -->
+<view class='summary'>
+  <!-- 第一行数据（第一个地点） -->
+  <view class='site'>学校南门</view>
+  <view class='row' style=''>
+    <view class='col'>
+      <view class='noemphis'>最大人流量</view>
+      <view class='numerical'>35</view>
+    </view>
+    <view class='col'>
+      <view class='noemphis'>人流高峰</view>
+      <view class='numerical'>11:27</view>
+    </view>
+    <view class='col'>
+      <view class='noemphis'>平均最大人数</view>
+      <view class='numerical'>27</view>
+    </view>
+    <view class='col'>
+      <view class='noemphis'>最大人流</view>
+      <view class='numerical'>35</view>
+    </view>
+  </view>
+  <!-- 第一行数据（第一个地点）结束 -->
+  <!-- 第二行数据（第二个地点） -->
+  <view class='site'>基教北门</view>
+  <view class='row' style=''>
+    <view class='col'>
+      <view class='noemphis'>最大人流量</view>
+      <view class='numerical'>21</view>
+    </view>
+    <view class='col'>
+      <view class='noemphis'>人流高峰</view>
+      <view class='numerical'>11:30</view>
+    </view>
+    <view class='col'>
+      <view class='noemphis'>平均最大人数</view>
+      <view class='numerical'>23</view>
+    </view>
+    <view class='col'>
+      <view class='noemphis'>最大人流</view>
+      <view class='numerical'>34</view>
+    </view>
+  </view>
+  <!-- 第二行数据（第二个地点）结束 -->
+  <!-- 第三行数据（第三个地点） -->
+  <view class='site'>综合餐厅</view>
+  <view class='row' style=''>
+    <view class='col'>
+      <view class='noemphis'>最大人流量</view>
+      <view class='numerical'>21</view>
+    </view>
+    <view class='col'>
+      <view class='noemphis'>人流高峰</view>
+      <view class='numerical'>11:30</view>
+    </view>
+    <view class='col'>
+      <view class='noemphis'>平均最大人数</view>
+      <view class='numerical'>23</view>
+    </view>
+    <view class='col'>
+      <view class='noemphis'>最大人流</view>
+      <view class='numerical'>34</view>
+    </view>
+  </view>
+  <!-- 第三行数据（第三个地点）结束 -->
+</view>
+
+<!-- 分割线 -->
+<view class='divider'></view>
+
+<!-- 实时人流数据折线图 -->
+<view class='flow'>
+  <view class="container">
+    <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+  </view>
+</view>
+<!-- 实时人流数据折线图结束 -->
+
+<!-- 警报图标 -->
+<image wx:if='{{unread}}' class='alarm' bindtap='alarm' mode='scaleToFill' src='/images/alarm.png'></image>
+<!-- 警报图标结束 -->

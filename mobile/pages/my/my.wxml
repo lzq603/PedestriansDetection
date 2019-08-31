@@ -1,0 +1,60 @@
+<!--pages/my/my.wxml-->
+<view>
+  <view class='header'>
+    <image src='{{user.avatarUrl}}'></image>
+    <view>
+      <view style='color:white;'>{{user.nickName}}</view>
+      <!-- <view style='color:yellow;font-size:32rpx;'>{{"没有星星的夜空"}}</view> -->
+    </view>
+  </view>
+
+  <view class='divider' style='height:24rpx;'></view>
+
+  <view class='menu'>
+    <navigator url='/pages/course/course?first=false'>
+      <view class='item'>
+        <view>
+          <image src='/image/course.png'></image>
+          <text>我的课程</text>
+        </view>
+        <image style='width:36rpx;height:36rpx;' src='/image/right.png'></image>
+      </view>
+    </navigator>
+    <navigator url='/pages/records/record'>
+      <view class='item'>
+        <view>
+          <image src='/image/record.png'></image>
+          <text>签到记录</text>
+        </view>
+        <image style='width:36rpx;height:36rpx;' src='/image/right.png'></image>
+      </view>
+    </navigator>
+    <navigator url='/pages/notice/notice'>
+      <view class='item'>
+        <view>
+          <image src='/image/help.png'></image>
+          <text>通知</text>
+        </view>
+        <image style='width:36rpx;height:36rpx;' src='/image/right.png'></image>
+      </view>
+    </navigator>
+    <navigator url='/pages/feedback/feedback'>
+      <view class='item'>
+        <view>
+          <image src='/image/feedback.png'></image>
+          <text>反馈/建议</text>
+        </view>
+        <image style='width:36rpx;height:36rpx;' src='/image/right.png'></image>
+      </view>
+    </navigator>
+    <navigator url='/pages/about/about'>
+      <view class='item'>
+        <view>
+          <image src='/image/about.png'></image>
+          <text>关于我们</text>
+        </view>
+        <image style='width:36rpx;height:36rpx;' src='/image/right.png'></image>
+      </view>
+    </navigator>
+  </view>
+</view>

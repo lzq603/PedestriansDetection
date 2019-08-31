@@ -1,0 +1,23 @@
+<!--pages/construction/message/message.wxml-->
+<!-- 已读/未读选项 -->
+<view class='readOption'>
+  <view bindtap='setRead' data-read='{{true}}' class='{{active == "all" ? "active all" : "all"}}'>全部</view>
+  <view bindtap='setRead' data-read='{{false}}' class='{{active == "unread" ? "active unread" : "unread"}}'>未读</view>
+</view>
+<view style='padding:20rpx;'>
+  <!-- <view style='text-align:center;'>通知</view> -->
+  <view wx:if='{{msgList.length != 0}}'>
+    <view style='text-align:center;'>
+    <!-- <input placeholder='搜索' placeholder-style='text-align:center' name="keyword"></input> -->
+    </view>
+    <view class='msgBox'>
+      <navigator wx:for='{{alarmList}}' wx:if='{{active=="all" || !item.aread}}' class='item' url='{{"../information/information?id=" + item.aid}}'>
+        <view class='title'>{{item.atitle}}<text wx:if='{{!item.aread}}' style='float:right;color:red'>●</text></view>
+        <view class='content'><text class='summary'>{{item.acontent}}</text><text style='float:right;'>{{item.shorttime}}</text></view>
+      </navigator>
+    </view>
+  </view>
+  <view wx:else style='text-align:center;color:#8a8a8a;padding:300rpx 0;'>
+    暂时没有通知……
+  </view>
+</view>

@@ -1,0 +1,39 @@
+/* pages/video/video.wxss */
+video{
+  width: 100%;
+}
+.li{
+  display: flex;
+  align-items: center;
+  padding: 10rpx;
+  width: 50%;
+}
+/* 数值 */
+.numerical{
+  font-size: 48rpx;
+  padding-left: 20rpx;
+  padding-right: 10rpx;
+}
+.state{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20rpx;
+}
+.col2{
+  width: 50%;
+  border-left: solid 1rpx #eeeeee;
+}
+.peoplenum{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.peoplenum image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.item{
+  padding: 20rpx;
+  border-bottom: solid 1rpx #eeeeee;
+}

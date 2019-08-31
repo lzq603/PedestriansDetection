@@ -1,0 +1,6 @@
+﻿使用cmd进入此文件夹
+执行命令
+python manage.py runserver 8080
+使用浏览器打开http://127.0.0.1:8080/index
+
+要求安装Python模块cv2、django、channels

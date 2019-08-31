@@ -1,0 +1,69 @@
+<!--pages/settings/settings.wxml-->
+<view>
+  <view class='header'>
+    <image src='https://wx.qlogo.cn/mmhead/3Cpz1ktT9SbgYSuDudATJibO1pC8F3YdTFXeYnYr0mls/132'></image>
+    <view>
+      <view style='color:white;'>哈</view>
+      <!-- <view style='color:yellow;font-size:32rpx;'>{{"没有星星的夜空"}}</view> -->
+    </view>
+  </view>
+
+  <view class='divider' style='height:24rpx;'></view>
+
+  <view class='menu'>
+    <navigator url='/pages/alarm/alarm'>
+      <view class='item'>
+        <view>
+          <image src='/images/notice.png'></image>
+          <text>报警记录</text>
+        </view>
+        <image style='width:36rpx;height:36rpx;' src='/images/right.png'></image>
+      </view>
+    </navigator>
+    <navigator url='/pages/alarmThreshold/alarmThreshold'>
+      <view class='item'>
+        <view>
+          <image src='/images/threshold.png'></image>
+          <text>报警阈值</text>
+        </view>
+        <image style='width:36rpx;height:36rpx;' src='/images/right.png'></image>
+      </view>
+    </navigator>
+    <navigator url='/pages/scoreThreshold/scoreThreshold'>
+      <view class='item'>
+        <view>
+          <image src='/images/threshold.png'></image>
+          <text>检测阈值</text>
+        </view>
+        <image style='width:36rpx;height:36rpx;' src='/images/right.png'></image>
+      </view>
+    </navigator>
+    <navigator url='/pages/scoreThreshold/scoreThreshold'>
+      <view class='item'>
+        <view>
+          <image src='/images/threshold.png'></image>
+          <text>算法选择</text>
+        </view>
+        <image style='width:36rpx;height:36rpx;' src='/images/right.png'></image>
+      </view>
+    </navigator>
+    <navigator url='/pages/feedback/feedback'>
+      <view class='item'>
+        <view>
+          <image src='/images/feedback.png'></image>
+          <text>反馈/建议</text>
+        </view>
+        <image style='width:36rpx;height:36rpx;' src='/images/right.png'></image>
+      </view>
+    </navigator>
+    <navigator url='/pages/about/about'>
+      <view class='item'>
+        <view>
+          <image src='/images/about2.png'></image>
+          <text>关于</text>
+        </view>
+        <image style='width:36rpx;height:36rpx;' src='/images/right.png'></image>
+      </view>
+    </navigator>
+  </view>
+</view>

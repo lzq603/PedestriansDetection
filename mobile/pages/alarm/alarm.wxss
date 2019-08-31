@@ -1,0 +1,52 @@
+/* pages/construction/message/message.wxss */
+/*搜索框*/
+input{
+  background-color:#eeeeee;
+  padding: 15rpx;
+  margin: 20rpx;
+  border-radius: 25rpx;
+  /*width: 80%;*/
+  margin-left: auto;
+  margin-right: auto;
+}
+/*消息列表*/
+
+.msgBox .item{
+  border-bottom: solid 1rpx rgba(138, 138, 138, 0.3);
+  padding: 20rpx 10rpx;
+}
+
+.content{ /*消息内容*/
+  color: #8a8a8a;
+  font-size: 36rpx;
+  height: 55rpx;
+}
+.content .summary{
+  text-overflow:ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  float: left;
+  width: 80%;
+}
+
+/* 已读/未读选项 */
+.readOption{
+  display: flex;
+  justify-content: center;
+}
+.readOption view{
+  border: solid 2rpx #1296bd;
+  padding: 6rpx;
+}
+.all{
+  border-top-left-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+}
+.unread{
+  border-top-right-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+.active{
+  background: #1296bd;
+  color: white;
+}

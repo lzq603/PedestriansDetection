@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/form_basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:19:15 GMT -->
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>校园智能监控系统 - 设置</title>
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="/static/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="/static/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="/static/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/static/css/animate.min.css" rel="stylesheet">
+    <link href="/static/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/static/css/jackwei.slider.css">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>系统设置 <small>设置检测阈值等</small></h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="get" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">检测阈值</label>
+                                <div class="col-sm-6">
+                                    <div id="sliderParent" style="padding: 12px 0;background-color: white;display: inline-block;"></div>
+                                </div>
+                                <!-- <button type="button" class="btn btn-w-m btn-primary" >更换图片</button> -->
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" style="clear: left;">结果预览</label>
+                                <div class="col-sm-6" style="height: 343px;line-height: 343px;position: relative;">
+                                    <div class="sk-spinner sk-spinner-wave">
+                                        <div class="sk-rect1"></div>
+                                        <div class="sk-rect2"></div>
+                                        <div class="sk-rect3"></div>
+                                        <div class="sk-rect4"></div>
+                                        <div class="sk-rect5"></div>
+                                    </div>
+                                    <img id="prevImg" alt="正在加载中，请稍后..." src="/setScoreThreshold?score=0.021" style="position: absolute;left:0;top:0;height:343px;width: 100%;">
+                                </div>
+
+                                <button type="button" class="btn btn-w-m btn-primary" style="margin-left: 10px;">更换图片</button>
+                                <div style="position: relative;left: 10px;">
+                                    <h4><i class="fa fa-info-circle" style="padding: 5px;"></i>检测阈值</h4>
+                                    <p>系统根据一定人头识别算法对画面中每一块区域计算得分，分值越高表明该区域越可能是人头。检测阈值表示系统判断一块区域是否是人头的界限。</p>
+                                    <p>检测阈值越大，检测到的人数越少，准确率越高，反之亦然。用户可根据实际检测结果进行调节</p>
+                                </div>
+                            </div>
+                            
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button class="btn btn-primary" type="submit">恢复默认</button>
+                                    <button class="btn btn-white" type="submit">撤销</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>学校南门 <small>设置报警阈值等</small></h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="get" class="form-horizontal">
+
+                            <div class="form-group">
+                                <div class="row" style="margin:10px 0">
+                                    <label class="col-sm-2 control-label">报警阈值</label>
+                                    <div class="col-sm-10">
+                                        <iframe src="/siteThreshold?site=1" scrolling="no" style="width: 100%;height: 68px;border: none;"></iframe>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <label class="col-sm-2 control-label">算法选择</label>
+                                    <div class="col-sm-10">
+                                        <div class="radio i-checks">
+                                            <label>
+                                                <input type="radio" value="Reploss" id="reploss1" name="arithmetic1">HOG+SVM</label>
+                                        </div>
+                                        <div class="radio i-checks">
+                                            <label>
+                                                <input type="radio" value="hog" id="hog1" name="arithmetic1">HOG+SVM</label>
+                                        </div>
+                                        <div class="radio i-checks">
+                                            <label>
+                                                <input type="radio" checked="" value="yolo" id="yolo1" name="arithmetic1">YOLO</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin:10px 0">
+                                    <label class="col-sm-2 control-label">负责人</label>
+                                    <div class="col-sm-2">
+                                        <input class="form-control" type="text" name="principal" value="李志强" />
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin: 10px 0">
+                                    <label class="col-sm-2 control-label">负责人联系方式</label>
+                                    <div class="col-sm-2">
+                                        <input class="form-control" type="text" name="phone" value="15131027238" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button class="btn btn-primary" type="submit">恢复默认</button>
+                                    <button class="btn btn-white" type="submit">撤销</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>学校南门 <small>设置报警阈值等</small></h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="get" class="form-horizontal">
+                            
+                            <div class="form-group">
+                                <div class="row" style="margin: 10px 0">
+                                    <label class="col-sm-2 control-label">报警阈值</label>
+                                    <div class="col-sm-10">
+                                        <iframe src="/siteThreshold?site=2" scrolling="no" style="width: 100%;height: 68px;border: none;"></iframe>
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin:10px 0">
+                                    <label class="col-sm-2 control-label">算法选择</label>
+                                    <div class="col-sm-10">
+                                        <div class="radio i-checks">
+                                            <label>
+                                                <input type="radio" value="reploss" id="reploss2" name="arithmetic2">Reploss</label>
+                                        </div>
+                                        <div class="radio i-checks">
+                                            <label>
+                                                <input type="radio" value="hog" id="hog2" name="arithmetic2">HOG+SVM</label>
+                                        </div>
+                                        <div class="radio i-checks">
+                                            <label>
+                                                <input type="radio" checked="" value="yolo" id="yolo2" name="arithmetic2">YOLO</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin:10px 0">
+                                    <label class="col-sm-2 control-label">负责人</label>
+                                    <div class="col-sm-2">
+                                        <input class="form-control" type="text" name="principal" value="李婷婷" />
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin: 10px 0">
+                                    <label class="col-sm-2 control-label">负责人联系方式</label>
+                                    <div class="col-sm-2">
+                                        <input class="form-control" type="text" name="phone" value="15127045632" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button class="btn btn-primary" type="submit">恢复默认</button>
+                                    <button class="btn btn-white" type="submit">撤销</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>学校南门 <small>设置报警阈值等</small></h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="get" class="form-horizontal">
+                            
+                            <div class="form-group">
+                                <div class="row" style="margin: 10px 0">
+                                    <label class="col-sm-2 control-label">报警阈值</label>
+                                    <div class="col-sm-10">
+                                        <iframe src="/siteThreshold?site=3" scrolling="no" style="width: 100%;height: 68px;border: none;"></iframe>
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin: 10px 0">
+                                    <label class="col-sm-2 control-label">算法选择</label>
+                                    <div class="col-sm-10">
+                                        <div class="radio i-checks">
+                                            <label>
+                                                <input type="radio" value="Reploss" id="reploss3" name="arithmetic3">Reploss</label>
+                                        </div>
+                                        <div class="radio i-checks">
+                                            <label>
+                                                <input type="radio" checked="" value="hog" id="hog3" name="arithmetic3">HOG+SVM</label>
+                                        </div>
+                                        <div class="radio i-checks">
+                                            <label>
+                                                <input type="radio" value="yolo" id="yolo3" name="arithmetic3">YOLO</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin:10px 0">
+                                    <label class="col-sm-2 control-label">负责人</label>
+                                    <div class="col-sm-2">
+                                        <input class="form-control" type="text" name="principal" value="徐中枢" />
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin: 10px 0">
+                                    <label class="col-sm-2 control-label">负责人联系方式</label>
+                                    <div class="col-sm-2">
+                                        <input class="form-control" type="text" name="phone" value="15733435177" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button class="btn btn-primary" type="submit">恢复默认</button>
+                                    <button class="btn btn-white" type="submit">撤销</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/static/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="/static/js/content.min.js?v=1.0.0"></script>
+    <script src="/static/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="/static/js/jackwei.slider.js"></script>
+    <script src="/static/js/plugins/layer/layer.min.js"></script>
+    <script>
+        var option = {
+            color: 'deepskyblue',
+            width: '520px',
+            progress: 0.3,
+            handleSrc: '/static/img/slider_handle.png',
+            isCustomText: true
+        };
+
+        var score = 0
+        var slider = $('#sliderParent').jackWeiSlider(option)
+
+        $.get('/getConfig',function(res){
+            console.log(res)
+            for (var i = 0; i < res.length; i++) {
+                if(res[i].pk == 'scoreThreshold')
+                {
+                    score = res[i].fields.cvalue
+                    slider.setProgress(score * 20).setText(score * 1000)
+                    slider.setOnDragCallback(function (p) {
+                            slider.setText(Math.round(p * 50))
+                            score = Math.round(p * 50) / 1000
+                            $("#prevImg").attr('src','/static/img/empty.png')
+                        })
+                    slider.setOnStopDragCallback(function (p) {
+                            console.log('stop');
+                            $("#prevImg").attr('src','../setScoreThreshold?score=' + score)
+                            layer.msg('设置已保存！')
+                        });
+                }
+            }
+        })
+
+        $(document).ready(function(){$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})});
+    </script>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+</body>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/form_basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:19:15 GMT -->
+</html>

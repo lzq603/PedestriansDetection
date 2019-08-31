@@ -1,0 +1,12 @@
+<!--pages/scoreThreshold/scoreThreshold.wxml-->
+<view class='title'>检测结果</view>
+<view class='img'></view>
+<view class='image'>
+  <image src='{{prevImg}}' mode='scaleToFill'></image>
+</view>
+<button bindtap='changeImg'>更换图片</button>
+<view class='title'>
+  <view>设置检测阈值：</view>
+  <view bindtap='recover'>恢复默认</view>
+</view>
+<slider min='0' max='50' value='{{score}}' bindchange='setThreshold' show-value='{{true}}'></slider>

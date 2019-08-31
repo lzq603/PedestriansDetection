@@ -1,0 +1,21 @@
+<!--pages/about/about.wxml-->
+<view class='contain'>
+  <view style='text-align:center;'>
+    <image id='logo' src='/images/logo.jpg'></image>
+    <view class='title'>公共地点人流量监测系统</view>
+    <view>v1.0</view>
+  </view>
+  <view class='contact'>
+    <view class='li'>
+      <image class='ico' src='/images/qq.png'></image>
+      <view>官方QQ交流群：961494898</view>
+    </view>
+    <view class='li'>
+      <image class='ico' src='/images/at.png'></image>
+      <view>反馈邮箱：iv2013@qq.com</view>
+    </view>
+  </view>
+  <view class='copyright'>
+    Copyright©2019
+  </view>
+</view>

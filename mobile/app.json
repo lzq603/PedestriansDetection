@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/scoreThreshold/scoreThreshold",
+    "pages/alarm/alarm",
+    "pages/information/information",
+    "pages/settings/settings",
+    "pages/alarmThreshold/alarmThreshold",
+    "pages/my/my",
+    "pages/video/video",
+    "pages/analyze/analyze",
+    "pages/line/index",
+    "pages/home/home",
+    "pages/about/about",
+    "pages/feedback/feedback",
+    "pages/arithmetic/arithmetic"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "人流监测",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "基础数据",
+        "iconPath": "/images/basedata.png",
+        "selectedIconPath": "/images/basedata-selected.png"
+      },
+      {
+        "pagePath": "pages/analyze/analyze",
+        "text": "人流量分析",
+        "iconPath": "/images/analyze.png",
+        "selectedIconPath": "/images/analyze-selected.png"
+      },
+      {
+        "pagePath": "pages/video/video",
+        "text": "实时画面",
+        "iconPath": "/images/realtimemonitor.png",
+        "selectedIconPath": "/images/realtimemonitor-selected.png"
+      },
+      {
+        "pagePath": "pages/settings/settings",
+        "text": "设置",
+        "iconPath": "/images/settings.png",
+        "selectedIconPath": "/images/settings-selected.png"
+      }
+    ],
+    "selectedColor": "#1296bd"
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,24 @@
+/**app.wxss**/
+.container {
+  width: 100%;
+  height: 37%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+} 
+/* 不明显字体 */
+.noemphis{
+  font-size: 24rpx;
+  color: #8a8a8a;
+}
+.noemphis2{
+  font-size: 36rpx;
+  color: #8a8a8a;
+}
+
+/* 分割线 */
+.divider{
+  border: solid 6rpx #eeeeee;
+}

@@ -1,0 +1,58 @@
+/**index.wxss**/
+
+.container{
+  padding-top: 40rpx;
+  width: 700rpx;
+  height: 550rpx;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ec-canvas {
+  width: 100%;
+  height: 100%;
+}
+/* "昨日概况“ */
+.head{
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* 昨日概况标题 */
+.head .title{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+/* 昨日概况 */
+.summary{
+  margin: 20rpx;
+  background: #eeeeee;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.row .col{
+  width: 22%;
+  background: white;
+  padding:10rpx; 
+}
+.numerical{
+  padding: 20rpx;
+  padding-left: 0;
+}
+.site{
+  background-color: white;
+}
+
+/* 警报图标 */
+.alarm{
+  position: fixed;
+  width: 50rpx;
+  height: 50rpx;
+  right: 20rpx;
+  top: 550rpx;
+}

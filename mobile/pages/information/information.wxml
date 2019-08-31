@@ -1,0 +1,19 @@
+<!--pages/construction/information/information.wxml-->
+<!-- <view class='frame'>
+  <view class='title'>{{message.title}}</view>
+  <view class='brunch'>{{message.brunch.name}}<text class='time'>{{message.time}}</text></view>
+  <view class='content'>
+    {{message.content}}
+  </view>
+</view> -->
+<view class='frame'>
+  <view class='title'>{{alarm.fields.atitle}}</view>
+  <view class='brunch'>系统通知
+<text class='time'>{{alarm.fields.atime}}</text></view>
+  <view class='content'>
+    {{alarm.fields.acontent}}
+  </view>
+</view>
+<view wx:if='{{alarm.fields.aimage && alarm.fields.aimage!= ""}}'>
+  <image src='{{app.globalData.host + "/static/alarm/" + alarm.fields.aimage}}'></image>
+</view>

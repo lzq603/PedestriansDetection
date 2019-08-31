@@ -1,0 +1,78 @@
+<!--
+  @Author: lizhiqag@163.com
+  @Date:   2019-05-30 18:51:23
+  @Description:   [ description ]
+  @Last Modified time: 2019-06-14 13:21:42
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/static/css/jackwei.slider.css">
+    <link href="/static/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+</head>
+<body>
+    <div id="site" style="padding: 12px 0;background-color: white;"></div>
+    <div class="help-block m-b-none" style="margin-top: 16px;"><span id="sitename"></span>人数超过<span id="num"></span>时系统自动报警</div>
+    
+    <script src="/static/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/static/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="/static/js/content.min.js?v=1.0.0"></script>
+    <script src="/static/js/jackwei.slider.js"></script>
+    <script src="/static/js/plugins/layer/layer.min.js"></script>
+    <script>
+        var sid = {{sid}}
+        // var sid = 1
+        var num = 0
+        var option = {
+            color: 'deepskyblue',
+            width: '520px',
+            progress: 0.3,
+            handleSrc: '/static/img/slider_handle.png',
+            isCustomText: true
+        };
+
+        $.get('/getSites', function(res){
+        	// console.log(res)
+        	// console.log(sid)
+            var site = {}
+            for (var i = 0; i < res.length; i++) {
+            	// console.log(res[i].pk)
+            	// console.log(sid)
+
+                if(res[i].pk == sid)
+                {
+                	// console.log(sid)
+                	site = res[i].fields
+                	site.sid = res[i].pk
+                	// console.log(site)
+                    var slider = $('#site').jackWeiSlider(option).setProgress(0.3).setText(site.salarm)
+                    $('#num').html(site.salarm)
+                    $('#sitename').html(site.sname)
+                    //滑动开始
+                    slider.setOnDragCallback(function (p) {
+                    	num = Math.round(p * 300)
+                        $('#num').html(num)
+                        slider.setText(num)
+                    })
+                    //滑动结束
+                    slider.setOnStopDragCallback(function (p) {
+		                // console.log('stop');
+		                $.get('/setAlarm?site=' + sid + '&alarmThreshold=' + num,function(res){
+		                	if (res.status == 'OK') {
+                                layer.msg('设置已保存')
+                            }else{
+                                layer.msg('设置失败')
+                            }
+		                })
+		                // $("#prevImg").attr('src','../setScoreThreshold?score=' + score)
+		            });
+		            break
+                }
+            }
+            
+        })
+
+    </script>
+</body>
+</html>

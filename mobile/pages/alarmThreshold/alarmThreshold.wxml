@@ -1,0 +1,15 @@
+<!--pages/alarmThreshold/alarmThreshold.wxml-->
+<view class='title'>报警阈值</view>
+
+<view style='padding:20rpx;'>
+  <block wx:for='{{sites}}' wx:key='ksite'>
+    <view class='site'>
+      <view>
+        <image src='/images/site.png'></image>
+        <text>{{item.sname}}</text>
+      </view>
+      <slider data-site='{{index + 1}}' bindchange='setAlarm' min='50' max='200' value='{{item.salarm}}' show-value='true'></slider>
+    </view>
+    <view class='divider' style='border-width:2rpx;margin:20rpx;'></view>
+  </block>
+</view>

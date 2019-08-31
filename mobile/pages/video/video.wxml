@@ -1,0 +1,35 @@
+<!--pages/video/video.wxml-->
+<video src='https://www.tunan.work/street.mp4'>
+</video>
+<view class='state'>
+  <view class='col1'>
+    <view>
+      <view class='noemphis2'>当前人数</view>
+      <view class='peoplenum'>
+        <image src='/images/people.png'></image>
+        <view class='numerical' style='color:#1ab394;'>44</view>
+        <view class='noemphis2'></view>
+      </view>
+      
+    </view>
+  </view>
+  <view class='col2'>
+    <view class='li'>
+      <view class='noemphis' style='width:70%;'>● 算法</view>
+      <view class='noemphis2' style='width:30%;'>yolo</view>
+    </view>
+    <view class='li'>
+      <view class='noemphis' style='width:70%;'>● 报警阈值</view>
+      <view class='noemphis2' style='width:30%;'>20</view>
+    </view>
+  </view>
+</view>
+<view class='divider'></view>
+
+<!-- 报警记录 -->
+<view class='record'>
+  <view class='item'>
+    <view class='noemphis2'>12:01</view>
+    <view>注意，人数超过33</view>
+  </view>
+</view>

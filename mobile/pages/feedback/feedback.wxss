@@ -1,0 +1,23 @@
+/* pages/feedback/feedback.wxss */
+page{
+  background-color: #eeeeee;
+}
+/*商品名称、描述*/
+
+.title{
+  background-color:#fefefe;
+  padding:16rpx;
+}
+.title input{
+  height: 100rpx;
+}
+.title textarea{
+  padding: 10rpx;
+}
+/*确定按钮*/
+button{
+  margin: 20rpx;
+  margin-top: 50rpx;
+  background-color: blueviolet;
+  color: white;
+}

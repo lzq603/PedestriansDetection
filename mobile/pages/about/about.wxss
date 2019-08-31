@@ -1,0 +1,39 @@
+/* pages/about/about.wxss */
+page{
+  height: 100%;
+}
+#logo{
+  width: 200rpx;
+  height: 200rpx;
+}
+.contain{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+.title{
+  color: blueviolet;
+  font-family:Arial;
+  font-size: 42rpx;
+  font-weight: bold;
+  padding-top: 20rpx;
+}
+.ico{
+  width: 50rpx;
+  height: 50rpx;
+  margin: 10rpx;
+}
+.li{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+.contact{
+  font-size: 30rpx;
+}
+.copyright{
+  color: #8a8a8a;
+}

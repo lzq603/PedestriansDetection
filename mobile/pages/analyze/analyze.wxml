@@ -1,0 +1,59 @@
+<!--pages/analyze/analyze.wxml-->
+<view class='daterange'>
+  <!-- 两个选项二选一 -->
+  <view>
+    <view class='noemphis2'>日期范围</view>
+    <block wx:if='{{dateOpt==7}}'>
+      <view data-d='7' bindtap='changeDateOpt' class='ropt selected'>近七天</view>
+      <view data-d='30' bindtap='changeDateOpt' class='ropt'>近30天</view>
+    </block>
+    <block wx:if='{{dateOpt==30}}'>
+      <view data-d='7' bindtap='changeDateOpt' class='ropt'>近七天</view>
+      <view data-d='30' bindtap='changeDateOpt' class='ropt selected'>近30天</view>
+    </block>
+  </view>
+  <!-- 自定义日期范围 -->
+  <view>
+    <view class='date'>2019-04-16</view>
+    <view class='noemphis2'>到</view>
+    <view class='date'>2019-04-22</view>
+  </view>
+</view>
+<view class='divider'></view>
+
+<!-- 人流量数据分析折线图 -->
+<view class='flow'>
+  <view class="container">
+    <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+  </view>
+</view>
+<!-- 人流量数据分析折线图结束 -->
+
+<view class='divider'></view>
+
+<!-- 详情数据 -->
+<view class='detail'>
+  <view class='title'>详情数据</view>
+  <view class='table'>
+    <view class='th'>
+      <view class='td'>日期</view>
+      <view class='td'>最大人流</view>
+    </view>
+    <view class='tr'>
+      <view class='td'>2019-04-22</view>
+      <view class='td'>1</view>
+    </view>
+    <view class='tr'>
+      <view class='td'>2019-04-21</view>
+      <view class='td'>5</view>
+    </view>
+    <view class='tr'>
+      <view class='td'>2019-04-20</view>
+      <view class='td'>17❕</view>
+    </view>
+    <view class='tr'>
+      <view class='td'>2019-04-19</view>
+      <view class='td'>14</view>
+    </view>
+  </view>
+</view>

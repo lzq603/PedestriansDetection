@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/mailbox.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:18:21 GMT -->
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>H+ 后台主题UI框架 - 收件箱</title>
+    <link rel="shortcut icon" href="favicon.ico"> <link href="/static/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="/static/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="/static/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/static/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <link href="/static/css/animate.min.css" rel="stylesheet">
+    <link href="/static/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-sm-12 animated fadeInRight">
+                <div class="mail-box-header">
+
+                    <form method="get" action="" class="pull-right mail-search">
+                        <div class="input-group">
+                            <input id="searchbox" type="text" class="form-control input-sm" name="keyword" placeholder="搜索邮件标题，正文等">
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-sm btn-primary" onclick="search();return false;">
+                                    搜索
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <h2>
+                    收件箱 <span id="msgNum"></span>
+                </h2>
+                    <div class="mail-tools tooltip-demo m-t-md">
+                        <div class="btn-group pull-right">
+                            <button class="btn btn-white btn-sm"><i class="fa fa-arrow-left"></i>
+                            </button>
+                            <button class="btn btn-white btn-sm"><i class="fa fa-arrow-right"></i>
+                            </button>
+
+                        </div>
+                        <button onclick="refreshMsg('/peoplecount/selectAlarm?offset=0&limit=15')" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="left" title="刷新邮件列表"><i class="fa fa-refresh"></i> 刷新</button>
+                        <button onclick="readAlarm()" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="标为已读"><i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="标为重要"><i class="fa fa-exclamation"></i>
+                        </button>
+                        <button onclick="deleteAlarm()" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="删除"><i class="fa fa-trash-o"></i>
+                        </button>
+
+                    </div>
+                </div>
+                <div class="mail-box">
+
+                    <table class="table table-hover table-mail">
+                        <tbody id="msgbox">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/jquery.min.js?v=2.1.4"></script>
+    <script>
+        
+    </script>
+    <script src="/static/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="/static/js/content.min.js?v=1.0.0"></script>
+    <script src="/static/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="/static/js/plugins/sweetalert/sweetalert.min.js"></script>
+    <script type="text/javascript">
+
+        function search(){
+            var keyword = $('#searchbox').val()
+            var url = '/peoplecount/searchAlarm?keyword=' + keyword
+            refreshMsg(url)
+        }
+
+        checked_msg = []
+        //刷新消息列表
+        function refreshMsg(url){
+            $('#msgbox').html('')
+            checked_msg = []
+            $.get(url,function(res){
+                console.log(res)
+                
+                $('#msgNum').html('(' + res.length + ')')
+                $.each(res,(index,msg)=>{
+                    var id = msg.pk
+                    var isread = msg.fields.aread ? "read" : "unread"   //是否已读
+                    var title = msg.fields.atitle
+                    var content = msg.fields.acontent
+                    var time = msg.fields.atime
+                    time = time.replace('T',' ')
+                    time = time.replace(/\.\d{3}/,'')
+                    var image = msg.fields.aimage ? 'fa-image' : ''
+                    var tag = '<tr class="' + isread + '"><td class="check-mail"><input type="checkbox" name="id" value="' + id + '" class="i-checks"></td><td class="mail-ontact"><a href="/alarmContent?id=' + id + '">' + title + '</a></td><td class="mail-subject"><a href="/alarmContent?id=' + id + '">' + content + '</a></td><td class=""><i class="fa ' + image + '"></i></td><td class="text-right mail-date">' + time + '</td></tr>'
+                    $('#msgbox').append(tag)
+                })
+                //复选框选中/取消选中事件
+                $(".i-checks").on('ifChecked', function(event){ //ifCreated 事件应该在插件初始化之前绑定 
+                    checked_msg.push(parseInt($(this).val()))
+                    console.log(checked_msg)
+                });
+                $(".i-checks").on('ifUnchecked', function(event){ //ifCreated 事件应该在插件初始化之前绑定 
+                    checked_msg.splice(checked_msg.indexOf($(this).val()),1)
+                    console.log(checked_msg)
+                });
+
+                //复选框美化
+                $(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})
+            })
+        }
+
+        function readAlarm(){
+            if(checked_msg.length == 0)
+                return
+            var param = {}
+            param.data = checked_msg
+            console.log(JSON.stringify(param))
+            param = escape(JSON.stringify(param))
+            $.get('/peoplecount/readAlarms?ids=' + param,function(res){
+                console.log(res)
+                refreshMsg('/peoplecount/selectAlarm?offset=0&limit=15')
+            })
+        }
+
+        function deleteAlarm(){
+            if(checked_msg.length == 0)
+                return
+            swal({
+                title: "您确定要删除这些信息吗",
+                text: "删除后将无法恢复，请谨慎操作！",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "删除",
+                closeOnConfirm: false
+            }, function () {
+                var param = {}
+                param.data = checked_msg
+                console.log(JSON.stringify(param))
+                param = escape(JSON.stringify(param))
+                $.get('/peoplecount/deleteAlarms?ids=' + param,function(res){
+                    console.log(res)
+                    swal("删除成功！", "您已经永久删除了这条信息。", "success");
+                    refreshMsg('/peoplecount/selectAlarm?offset=0&limit=15')
+                })
+
+            });
+        }
+
+        $(document).ready(function(){
+            refreshMsg('/peoplecount/selectAlarm?offset=0&limit=15')
+        });
+    </script>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+</body>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/mailbox.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:18:22 GMT -->
+</html>
