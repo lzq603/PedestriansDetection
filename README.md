@@ -19,9 +19,9 @@
 运行步骤：  
 1)	打开“云端”文件夹，双击“点我运行.bat”，屏幕上出现一个黑窗口  
  
-2)	待屏幕中出现“Starting development server at……”字样即启动成功，如图  
+2)	待屏幕中出现“Starting development server at……”字样即启动成功  
  
-3)	在本机使用浏览器访问http://127.0.0.1/index 即可访问云平台页面，其它计算机访问http:// + ip地址 + /index（须与本机保持网络联通），如图  
+3)	在本机使用浏览器访问http://127.0.0.1/index 即可访问云平台页面，其它计算机访问http:// + ip地址 + /index（须与本机保持网络联通）  
  
 4)	如80端口被占用，可进入manage文件夹，运行cmd命令：  
 
